@@ -52,8 +52,10 @@ vector<menu> menus;
 class table {
     private: string name;
     private: vector<order> orders;
+    private: bool isAvailable;
     public: table(string name) {
         this->name = name;
+        this->isAvailable = true;
     }
     public: string getName() {
         return this->name;
@@ -87,6 +89,9 @@ class table {
             }
         }
         return total;
+    }
+    public: bool getIsAvailable() {
+        return this->isAvailable;
     }
     public: ~table() {
         this->orders.clear();
