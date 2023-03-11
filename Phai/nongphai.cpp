@@ -210,7 +210,7 @@ int main() {
     cout << "Vegetarian-stir-fry x 2" << endl;
     cout << "Fruit-tart x 5" << endl;
     cout << "---------------------------------" << endl;
-    //Write your code here
+    //Write your code here.
     for(int i=0;i<tables.size();i++){
         if(!tables[i].getIsAvailable())
         cout << tables[i].getName() << " " << "[" <<i+1<< "]" << endl;
