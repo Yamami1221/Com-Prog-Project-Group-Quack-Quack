@@ -149,7 +149,7 @@ int main() {
         if(!tables[i].getIsAvailable())
         cout << tables[i].getName() << " " << i+1 << endl;
     }
-    
+    //...
 
     
     return 0;
