@@ -148,7 +148,6 @@ int main() {
     cout << "Mushroom-risotto x 2" << endl;
     cout << "Fish-and-chips x 5" << endl;
     cout << "---------------------------------" << endl;
-    //Write your code here
 
     string tablename = "Booth 1";
     int tableindex = -1;
