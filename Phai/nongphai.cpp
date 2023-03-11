@@ -145,6 +145,12 @@ int main() {
     cout << "Fish-and-chips x 5" << endl;
     cout << "---------------------------------" << endl;
     //Write your code here
+    for(int i=0;i<tables.size();i++){
+        if(!tables[i].getIsAvailable())
+        cout << tables[i].getName() << " " << i+1 << endl;
+    }
+    
+
     
     return 0;
 }
