@@ -155,7 +155,7 @@ int main() {
     
     int choice;
     int Numtable;
-    int Nummenu;
+    int NumOrder;
     cout << "1. Add Order" << endl;
     cout << "2. Remove Order" << endl;
     cout << "3. Add/Remove menu" << endl;
@@ -171,17 +171,47 @@ int main() {
         for(int i = 0; i < menus.size(); i++) {
             cout << i+1 <<". "<< menus[i].getName() << endl;
         }
-        cout << "Choose menu: ";
-        cin >> Nummenu;
-        }
-        string ordername = menus[Nummenu-1].getName();
+        cout << "Choose Order: ";
+        cin >> NumOrder;
+        string ordername = menus[NumOrder-1].getName();
         int N;
         cout << "How many: ";
         cin >> N;
         tables[Numtable-1].addOrder(order(ordername,N));
-        cout << "Add Menu Complete" << endl;
-    //else if(choice == 2) 
-    //else if(choice == 3) 
+        cout << "Add Order Complete" << endl;
+    }
+    else if(choice == 3){
+        int choose;
+        for(int i = 0; i < menus.size(); i++) {
+            cout << i+1 <<". "<< menus[i].getName() << endl;
+        }
+        cout << "1. Add Menu" << endl;
+        cout << "2. Remove Menu" << endl;
+        cin >> choose;
+        if(choose == 1) {
+            string newmenu;
+            int newprice;
+            cout << "Enter new menu: ";
+            cin >> newmenu;
+            cout << "Enter new price: ";
+            cin >> newprice;
+            menus.push_back(menu(newmenu,newprice));
+            cout << "Add Menu Complete" << endl;
+        }
+        if(choose == 2) {
+            int Nummenu;
+            for(int i = 0; i < menus.size(); i++) {
+                cout << i+1 <<". "<< menus[i].getName() << endl;
+            }
+            cout << "Choose menu: ";
+            cin >> Nummenu;
+            menus.erase(menus.begin() + Nummenu-1);
+            cout << "Remove Menu Complete" << endl;
+        }
+        for(int i = 0; i < menus.size(); i++) {
+            cout << i+1 <<". "<< menus[i].getName() << endl;
+        }
+    } 
     
     return 0;
 
