@@ -2,6 +2,7 @@
 #include<vector>
 #include<string>
 #include<fstream>
+#include<iomanip>
 
 using namespace std;
 
@@ -99,9 +100,34 @@ class table {
     public: ~table() {
         this->orders.clear();
     }
+    public: void showReceipt();
 };
 
 vector<table> tables;
+
+void table::showReceipt(){
+    int price;
+    cout << "Table name : " << name << endl << endl;
+    for(int i=0;i<orders.size();i++){
+        for(int j=0;j<menus.size();j++){
+            if(orders[i].getName() == menus[j].getName()){
+                price = menus[j].getPrice();
+                if(orders[i].getQuantity() < 10){
+                    cout << setw(20) << left << orders[i].getName() << " x" << orders[i].getQuantity() << setw(8) << " " ;
+                    cout << price*orders[i].getQuantity() << " $" << right;
+                    cout << endl;
+                }else{
+                    cout << setw(20) << left << orders[i].getName() << " x" << orders[i].getQuantity() << setw(7) << " " ;
+                    cout << price*orders[i].getQuantity() << " $" << right;
+                    cout << endl;
+                }
+            }
+        }
+    }
+    cout << "------------------------------------" << endl;
+    cout << "Total: " << total() << " $";
+    cout << "\n------------------------------------" << endl;
+}
 
 int main() {
     ifstream tabledata("table.txt");
@@ -149,8 +175,8 @@ int main() {
     cout << "Fish-and-chips x 5" << endl;
     cout << "---------------------------------" << endl;
 
-    string tablename = "Booth 1";
-    int tableindex = -1;
+    tablename = "Booth 1";
+    tableindex = -1;
     for (int i = 0; i < tables.size(); i++) {
         if (tables[i].getName() == tablename) {
             tableindex = i;
@@ -187,10 +213,12 @@ int main() {
     //Write your code here
     for(int i=0;i<tables.size();i++){
         if(!tables[i].getIsAvailable())
-        cout << tables[i].getName() << " " << i+1 << endl;
+        cout << tables[i].getName() << " " << "[" <<i+1<< "]" << endl;
     }
-    //...
-
-    
+    cout << "Choose : ";
+    int tableChoice;
+    cin >> tableChoice;
+    cout << "------------------------------------" << endl;
+    tables[tableChoice-1].showReceipt();
     return 0;
 }
