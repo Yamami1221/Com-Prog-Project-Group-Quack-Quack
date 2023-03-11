@@ -127,29 +127,7 @@ int main() {
         cout << "Table not found" << endl;
         return 0;
     }
-    tables[tableindex].addOrder(order("Soft-drinks", 1));
-    tables[tableindex].addOrder(order("Soft-drinks", 1));
-    tables[tableindex].addOrder(order("Soft-drinks", 1));
-    tables[tableindex].addOrder(order("Coffee", 1));
-    tables[tableindex].addOrder(order("Cheesecake", 1));
-    tables[tableindex].addOrder(order("Grilled-salmon", 1));
-    tables[tableindex].addOrder(order("Mushroom-risotto", 1));
-    tables[tableindex].addOrder(order("Mushroom-risotto", 1));
-    tables[tableindex].addOrder(order("Fish-and-chips", 5));
-
-    cout << "Table: " << tables[tableindex].getName() << endl;
-    cout << "---------------------------------" << endl;
-    cout << "The total should be: " << tables[tableindex].total() << endl;
-    cout << "And should have: " << endl;
-    cout << "Soft-drinks x 3" << endl;
-    cout << "Coffee x 1" << endl;
-    cout << "Cheesecake x 1" << endl;
-    cout << "Grilled-salmon x 1" << endl;
-    cout << "Mushroom-risotto x 2" << endl;
-    cout << "Fish-and-chips x 5" << endl;
-    cout << "---------------------------------" << endl;
-
-    string tablename = "Booth 1";
+    string tablename = "Window Table";
     int tableindex = -1;
     for (int i = 0; i < tables.size(); i++) {
         if (tables[i].getName() == tablename) {
@@ -161,36 +139,20 @@ int main() {
         cout << "Table not found" << endl;
         return 0;
     }
-    tables[tableindex].addOrder(order("Spring-rolls", 5));
-    tables[tableindex].addOrder(order("Nachos", 8));
-    tables[tableindex].addOrder(order("Soft-drinks", 10));
-    tables[tableindex].addOrder(order("Coffee", 5));
-    tables[tableindex].addOrder(order("Cheesecake", 7));
-    tables[tableindex].addOrder(order("Grilled-salmon", 2));
-    tables[tableindex].addOrder(order("Vegetarian-stir-fry", 1));
-    tables[tableindex].addOrder(order("Vegetarian-stir-fry", 1));
-    tables[tableindex].addOrder(order("Fruit-tart", 5));
-
-    cout << "Table: " << tables[tableindex].getName() << endl;
-    cout << "---------------------------------" << endl;
-    cout << "The total should be: " << tables[tableindex].total() << endl;
-    cout << "And should have: " << endl;
-    cout << "Spring-rolls x 5" << endl;
-    cout << "Nachos x 8" << endl;
-    cout << "Soft-drinks x 10" << endl;
-    cout << "Coffee x 5" << endl;
-    cout << "Cheesecake x 7" << endl;
-    cout << "Grilled-salmon x 2" << endl;
-    cout << "Vegetarian-stir-fry x 2" << endl;
-    cout << "Fruit-tart x 5" << endl;
-    cout << "---------------------------------" << endl;
-    //Write your code here
-    for(int i=0;i<tables.size();i++){
-        if(!tables[i].getIsAvailable())
-        cout << tables[i].getName() << " " << i+1 << endl;
+    string tablename = "Bar Stool 3";
+    int tableindex = -1;
+    for (int i = 0; i < tables.size(); i++) {
+        if (tables[i].getName() == tablename) {
+            tableindex = i;
+            tables[i].setTableStatus(false);
+        }
     }
-    //...
-
+    if (tableindex == -1) {
+        cout << "Table not found" << endl;
+        return 0;
+    }
+    
+    //Write your code here
     
     return 0;
 }

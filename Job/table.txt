@@ -1,0 +1,15 @@
+Booth 1
+Booth 2
+Booth 3
+Table 1
+Table 2
+Table 3
+Window Table
+Patio Table
+Bar Stool 1
+Bar Stool 2
+Bar Stool 3
+High Top 1
+High Top 2
+Private Room A
+Private Room B
