@@ -82,6 +82,16 @@ class table {
             }
         }
     }
+    public: void removeOrder(order order, int quantity) {
+        for (int i = 0; i < this->orders.size(); i++) {
+            if (this->orders[i].getName() == order.getName()) {
+                this->orders[i].remove(quantity);
+                if (this->orders[i].getQuantity() == 0) {
+                    this->orders.erase(this->orders.begin() + i);
+                }
+            }
+        }
+    }
     public: int total() {
         int total = 0;
         for (int i = 0; i < this->orders.size(); i++) {
