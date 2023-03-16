@@ -39,6 +39,9 @@ class order {
     }
     public: void remove() {
         this->quantity--;
+        if (this->quantity < 0) {
+            this->quantity = 0;
+        }
     }
     public: void remove(int quantity) {
         this->quantity -= quantity;
@@ -64,6 +67,9 @@ class table {
     public: vector<order> getOrders() {
         return this->orders;
     }
+    public: void setOrders(vector<order> orders) {
+        this->orders = orders;
+    }
     public: void setTableStatus(bool isAvailable) {
         this->isAvailable = isAvailable;
     }
@@ -80,6 +86,16 @@ class table {
         for (int i = 0; i < this->orders.size(); i++) {
             if (this->orders[i].getName() == order.getName()) {
                 this->orders.erase(this->orders.begin() + i);
+            }
+        }
+    }
+    public: void removeOrder(order order, int quantity) {
+        for (int i = 0; i < this->orders.size(); i++) {
+            if (this->orders[i].getName() == order.getName()) {
+                this->orders[i].remove(quantity);
+                if (this->orders[i].getQuantity() == 0) {
+                    this->orders.erase(this->orders.begin() + i);
+                }
             }
         }
     }
