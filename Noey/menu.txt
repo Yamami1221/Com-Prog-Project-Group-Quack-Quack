@@ -1,0 +1,60 @@
+Bruschetta,8
+Fried calamari,12
+Mozzarella sticks,9
+Spinach and artichoke dip,10
+Buffalo wings,11
+Shrimp cocktail,14
+Caprese salad,9
+Hummus and pita bread,8
+Spring rolls,10
+Nachos,12
+Grilled chicken breast,15
+Fish and chips,18
+Spaghetti carbonara,16
+Bacon cheeseburger,14
+Caesar salad with grilled shrimp,18
+Ribeye steak,25
+Mushroom risotto,20
+Chicken alfredo,18
+Vegetarian stir fry,16
+Grilled salmon,22
+Chocolate cake,8
+Cheesecake,9
+Crème brûlée,10
+Apple pie,7
+Ice cream sundae,6
+Tiramisu,9
+Key lime pie,8
+Chocolate mousse,8
+Bread pudding,9
+Fruit tart,7
+Soft drinks,3
+Iced tea,3
+Coffee,2
+Hot tea,3
+Bottled water,2
+Lemonade,3
+Beer,5
+House wine,7
+Margarita,8
+Cosmopolitan,9
+Pancakes,10
+French toast,12
+Eggs Benedict,14
+Breakfast burrito,12
+Omelet,11
+Bagel and lox,15
+Avocado toast,13
+Waffles,11
+Breakfast sandwich,9
+Mimosa,8
+Sliders,6
+Wings,7
+Nachos,8
+Quesadilla,7
+Beer,4
+Wine,6
+Well cocktails,5
+Margherita pizza,10
+Fried calamari,9
+Spinach dip,6
