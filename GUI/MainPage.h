@@ -65,8 +65,38 @@ namespace RealProjectV1 {
 	private: System::Windows::Forms::ComboBox^ CancelTableComboBox;
 	private: System::Windows::Forms::TextBox^ CancelTableInfoTextBox;
 	private: System::Windows::Forms::Button^ CancelTableButton;
-	private: System::Windows::Forms::GroupBox^ AddTableGroupBox;
+
 	private: System::Windows::Forms::GroupBox^ RemoveTableGroupBox;
+
+	private: System::Windows::Forms::Button^ RemoveTableButton;
+	private: System::Windows::Forms::ComboBox^ RemoveTableComboBox;
+
+	private: System::Windows::Forms::SplitContainer^ EditTableContainer;
+
+
+	private: System::Windows::Forms::GroupBox^ AddTableGroupBox;
+	private: System::Windows::Forms::Button^ AddTableButton;
+	private: System::Windows::Forms::TextBox^ AddTableMaxSeatTextBox;
+	private: System::Windows::Forms::TextBox^ AddTableNameTextBox;
+	private: System::Windows::Forms::GroupBox^ AddTableMaxSeatGroupBox;
+	private: System::Windows::Forms::GroupBox^ AddTableNameGroupBox;
+	private: System::Windows::Forms::TextBox^ AddOrdersInTableTextBox;
+	private: System::Windows::Forms::ComboBox^ AddOrdersSelectTableComboBox;
+
+
+	private: System::Windows::Forms::TextBox^ AddOrdersTableInfoTextBox;
+	private: System::Windows::Forms::ComboBox^ AddOrdersSelectMenusComboBox;
+	private: System::Windows::Forms::TextBox^ AddOrdersMenusQuantityTextBox;
+	private: System::Windows::Forms::TextBox^ AddOrdersMenusInfoTextBox;
+
+
+
+	private: System::Windows::Forms::Button^ AddOrdersButton;
+	private: System::Windows::Forms::GroupBox^ ReservetionNameGroupBox;
+
+
+
+
 
 
 	protected:
@@ -102,22 +132,48 @@ namespace RealProjectV1 {
 			this->CancelTableComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->CancelTableStatusTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->EditTableTab = (gcnew System::Windows::Forms::TabPage());
+			this->EditTableContainer = (gcnew System::Windows::Forms::SplitContainer());
+			this->AddTableGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->AddTableMaxSeatGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->AddTableMaxSeatTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AddTableNameGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->AddTableNameTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AddTableButton = (gcnew System::Windows::Forms::Button());
+			this->RemoveTableGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->RemoveTableButton = (gcnew System::Windows::Forms::Button());
+			this->RemoveTableComboBox = (gcnew System::Windows::Forms::ComboBox());
 			this->OrderMenuTab = (gcnew System::Windows::Forms::TabPage());
 			this->OrderMenuTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->AddOrderTab = (gcnew System::Windows::Forms::TabPage());
+			this->AddOrdersButton = (gcnew System::Windows::Forms::Button());
+			this->AddOrdersMenusInfoTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AddOrdersMenusQuantityTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AddOrdersSelectMenusComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->AddOrdersTableInfoTextBox = (gcnew System::Windows::Forms::TextBox());
+			this->AddOrdersSelectTableComboBox = (gcnew System::Windows::Forms::ComboBox());
+			this->AddOrdersInTableTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->RemoveOrderTab = (gcnew System::Windows::Forms::TabPage());
 			this->EditMenuTab = (gcnew System::Windows::Forms::TabPage());
 			this->BillingMenuTab = (gcnew System::Windows::Forms::TabPage());
-			this->AddTableGroupBox = (gcnew System::Windows::Forms::GroupBox());
-			this->RemoveTableGroupBox = (gcnew System::Windows::Forms::GroupBox());
+			this->ReservetionNameGroupBox = (gcnew System::Windows::Forms::GroupBox());
 			this->MainPageTabControl->SuspendLayout();
 			this->TableMenuTab->SuspendLayout();
 			this->TableMenuTabControl->SuspendLayout();
 			this->TableReservationTab->SuspendLayout();
 			this->CancelTableTab->SuspendLayout();
 			this->EditTableTab->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditTableContainer))->BeginInit();
+			this->EditTableContainer->Panel1->SuspendLayout();
+			this->EditTableContainer->Panel2->SuspendLayout();
+			this->EditTableContainer->SuspendLayout();
+			this->AddTableGroupBox->SuspendLayout();
+			this->AddTableMaxSeatGroupBox->SuspendLayout();
+			this->AddTableNameGroupBox->SuspendLayout();
+			this->RemoveTableGroupBox->SuspendLayout();
 			this->OrderMenuTab->SuspendLayout();
 			this->OrderMenuTabControl->SuspendLayout();
+			this->AddOrderTab->SuspendLayout();
+			this->ReservetionNameGroupBox->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// MainPageTabControl
@@ -161,7 +217,7 @@ namespace RealProjectV1 {
 			// 
 			// TableReservationTab
 			// 
-			this->TableReservationTab->Controls->Add(this->ResNameTextBox);
+			this->TableReservationTab->Controls->Add(this->ReservetionNameGroupBox);
 			this->TableReservationTab->Controls->Add(this->ReserveTableButton);
 			this->TableReservationTab->Controls->Add(this->SelTableInfoTextBox);
 			this->TableReservationTab->Controls->Add(this->SelectTableComboBox);
@@ -178,10 +234,11 @@ namespace RealProjectV1 {
 			// 
 			this->ResNameTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ResNameTextBox->Location = System::Drawing::Point(6, 308);
+			this->ResNameTextBox->Location = System::Drawing::Point(6, 33);
 			this->ResNameTextBox->Name = L"ResNameTextBox";
-			this->ResNameTextBox->Size = System::Drawing::Size(830, 51);
+			this->ResNameTextBox->Size = System::Drawing::Size(818, 51);
 			this->ResNameTextBox->TabIndex = 4;
+			this->ResNameTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			this->ResNameTextBox->TextChanged += gcnew System::EventHandler(this, &MainPage::ResNameTextBox_TextChanged);
 			// 
 			// ReserveTableButton
@@ -189,7 +246,7 @@ namespace RealProjectV1 {
 			this->ReserveTableButton->Enabled = false;
 			this->ReserveTableButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->ReserveTableButton->Location = System::Drawing::Point(279, 365);
+			this->ReserveTableButton->Location = System::Drawing::Point(294, 409);
 			this->ReserveTableButton->Name = L"ReserveTableButton";
 			this->ReserveTableButton->Size = System::Drawing::Size(260, 80);
 			this->ReserveTableButton->TabIndex = 3;
@@ -249,10 +306,10 @@ namespace RealProjectV1 {
 			this->CancelTableTab->Controls->Add(this->CancelTableInfoTextBox);
 			this->CancelTableTab->Controls->Add(this->CancelTableComboBox);
 			this->CancelTableTab->Controls->Add(this->CancelTableStatusTextBox);
-			this->CancelTableTab->Location = System::Drawing::Point(4, 37);
+			this->CancelTableTab->Location = System::Drawing::Point(4, 25);
 			this->CancelTableTab->Name = L"CancelTableTab";
 			this->CancelTableTab->Padding = System::Windows::Forms::Padding(3);
-			this->CancelTableTab->Size = System::Drawing::Size(1258, 632);
+			this->CancelTableTab->Size = System::Drawing::Size(1258, 644);
 			this->CancelTableTab->TabIndex = 1;
 			this->CancelTableTab->Text = L"Cancel Table";
 			this->CancelTableTab->UseVisualStyleBackColor = true;
@@ -312,21 +369,146 @@ namespace RealProjectV1 {
 			this->CancelTableStatusTextBox->Name = L"CancelTableStatusTextBox";
 			this->CancelTableStatusTextBox->ReadOnly = true;
 			this->CancelTableStatusTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-			this->CancelTableStatusTextBox->Size = System::Drawing::Size(400, 620);
+			this->CancelTableStatusTextBox->Size = System::Drawing::Size(400, 632);
 			this->CancelTableStatusTextBox->TabIndex = 0;
 			this->CancelTableStatusTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// EditTableTab
 			// 
-			this->EditTableTab->Controls->Add(this->RemoveTableGroupBox);
-			this->EditTableTab->Controls->Add(this->AddTableGroupBox);
-			this->EditTableTab->Location = System::Drawing::Point(4, 37);
+			this->EditTableTab->Controls->Add(this->EditTableContainer);
+			this->EditTableTab->Location = System::Drawing::Point(4, 25);
 			this->EditTableTab->Name = L"EditTableTab";
 			this->EditTableTab->Padding = System::Windows::Forms::Padding(3);
-			this->EditTableTab->Size = System::Drawing::Size(1258, 632);
+			this->EditTableTab->Size = System::Drawing::Size(1258, 644);
 			this->EditTableTab->TabIndex = 2;
 			this->EditTableTab->Text = L"Edit Table";
 			this->EditTableTab->UseVisualStyleBackColor = true;
+			// 
+			// EditTableContainer
+			// 
+			this->EditTableContainer->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->EditTableContainer->Location = System::Drawing::Point(3, 3);
+			this->EditTableContainer->Name = L"EditTableContainer";
+			this->EditTableContainer->Orientation = System::Windows::Forms::Orientation::Horizontal;
+			// 
+			// EditTableContainer.Panel1
+			// 
+			this->EditTableContainer->Panel1->Controls->Add(this->AddTableGroupBox);
+			// 
+			// EditTableContainer.Panel2
+			// 
+			this->EditTableContainer->Panel2->Controls->Add(this->RemoveTableGroupBox);
+			this->EditTableContainer->Size = System::Drawing::Size(1252, 638);
+			this->EditTableContainer->SplitterDistance = 319;
+			this->EditTableContainer->TabIndex = 1;
+			// 
+			// AddTableGroupBox
+			// 
+			this->AddTableGroupBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->AddTableGroupBox->Controls->Add(this->AddTableMaxSeatGroupBox);
+			this->AddTableGroupBox->Controls->Add(this->AddTableNameGroupBox);
+			this->AddTableGroupBox->Controls->Add(this->AddTableButton);
+			this->AddTableGroupBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddTableGroupBox->Location = System::Drawing::Point(3, 3);
+			this->AddTableGroupBox->Name = L"AddTableGroupBox";
+			this->AddTableGroupBox->Size = System::Drawing::Size(1246, 313);
+			this->AddTableGroupBox->TabIndex = 0;
+			this->AddTableGroupBox->TabStop = false;
+			this->AddTableGroupBox->Text = L"Add Table";
+			// 
+			// AddTableMaxSeatGroupBox
+			// 
+			this->AddTableMaxSeatGroupBox->Controls->Add(this->AddTableMaxSeatTextBox);
+			this->AddTableMaxSeatGroupBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddTableMaxSeatGroupBox->Location = System::Drawing::Point(689, 112);
+			this->AddTableMaxSeatGroupBox->Name = L"AddTableMaxSeatGroupBox";
+			this->AddTableMaxSeatGroupBox->Size = System::Drawing::Size(182, 100);
+			this->AddTableMaxSeatGroupBox->TabIndex = 6;
+			this->AddTableMaxSeatGroupBox->TabStop = false;
+			this->AddTableMaxSeatGroupBox->Text = L"Max Seat";
+			// 
+			// AddTableMaxSeatTextBox
+			// 
+			this->AddTableMaxSeatTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AddTableMaxSeatTextBox->Location = System::Drawing::Point(3, 39);
+			this->AddTableMaxSeatTextBox->Name = L"AddTableMaxSeatTextBox";
+			this->AddTableMaxSeatTextBox->Size = System::Drawing::Size(176, 43);
+			this->AddTableMaxSeatTextBox->TabIndex = 3;
+			this->AddTableMaxSeatTextBox->TextChanged += gcnew System::EventHandler(this, &MainPage::AddTableMaxSeatTextBox_TextChanged);
+			// 
+			// AddTableNameGroupBox
+			// 
+			this->AddTableNameGroupBox->Controls->Add(this->AddTableNameTextBox);
+			this->AddTableNameGroupBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddTableNameGroupBox->Location = System::Drawing::Point(25, 112);
+			this->AddTableNameGroupBox->Name = L"AddTableNameGroupBox";
+			this->AddTableNameGroupBox->Size = System::Drawing::Size(640, 100);
+			this->AddTableNameGroupBox->TabIndex = 5;
+			this->AddTableNameGroupBox->TabStop = false;
+			this->AddTableNameGroupBox->Text = L"Table Name";
+			// 
+			// AddTableNameTextBox
+			// 
+			this->AddTableNameTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AddTableNameTextBox->Location = System::Drawing::Point(3, 39);
+			this->AddTableNameTextBox->Name = L"AddTableNameTextBox";
+			this->AddTableNameTextBox->Size = System::Drawing::Size(634, 43);
+			this->AddTableNameTextBox->TabIndex = 2;
+			this->AddTableNameTextBox->TextChanged += gcnew System::EventHandler(this, &MainPage::AddTableNameTextBox_TextChanged);
+			// 
+			// AddTableButton
+			// 
+			this->AddTableButton->Enabled = false;
+			this->AddTableButton->Location = System::Drawing::Point(937, 146);
+			this->AddTableButton->Name = L"AddTableButton";
+			this->AddTableButton->Size = System::Drawing::Size(250, 51);
+			this->AddTableButton->TabIndex = 4;
+			this->AddTableButton->Text = L"Add Table";
+			this->AddTableButton->UseVisualStyleBackColor = true;
+			this->AddTableButton->Click += gcnew System::EventHandler(this, &MainPage::AddTableButton_Click);
+			// 
+			// RemoveTableGroupBox
+			// 
+			this->RemoveTableGroupBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->RemoveTableGroupBox->Controls->Add(this->RemoveTableButton);
+			this->RemoveTableGroupBox->Controls->Add(this->RemoveTableComboBox);
+			this->RemoveTableGroupBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->RemoveTableGroupBox->Location = System::Drawing::Point(3, 3);
+			this->RemoveTableGroupBox->Name = L"RemoveTableGroupBox";
+			this->RemoveTableGroupBox->Size = System::Drawing::Size(1246, 309);
+			this->RemoveTableGroupBox->TabIndex = 1;
+			this->RemoveTableGroupBox->TabStop = false;
+			this->RemoveTableGroupBox->Text = L"Remove Table";
+			// 
+			// RemoveTableButton
+			// 
+			this->RemoveTableButton->Enabled = false;
+			this->RemoveTableButton->Location = System::Drawing::Point(937, 137);
+			this->RemoveTableButton->Name = L"RemoveTableButton";
+			this->RemoveTableButton->Size = System::Drawing::Size(250, 53);
+			this->RemoveTableButton->TabIndex = 1;
+			this->RemoveTableButton->Text = L"Remove Table";
+			this->RemoveTableButton->UseVisualStyleBackColor = true;
+			this->RemoveTableButton->Click += gcnew System::EventHandler(this, &MainPage::RemoveTableButton_Click);
+			// 
+			// RemoveTableComboBox
+			// 
+			this->RemoveTableComboBox->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Suggest;
+			this->RemoveTableComboBox->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
+			this->RemoveTableComboBox->FormattingEnabled = true;
+			this->RemoveTableComboBox->Location = System::Drawing::Point(25, 138);
+			this->RemoveTableComboBox->Name = L"RemoveTableComboBox";
+			this->RemoveTableComboBox->Size = System::Drawing::Size(846, 53);
+			this->RemoveTableComboBox->TabIndex = 0;
+			this->RemoveTableComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MainPage::RemoveTableComboBox_SelectedIndexChanged);
 			// 
 			// OrderMenuTab
 			// 
@@ -353,6 +535,13 @@ namespace RealProjectV1 {
 			// 
 			// AddOrderTab
 			// 
+			this->AddOrderTab->Controls->Add(this->AddOrdersButton);
+			this->AddOrderTab->Controls->Add(this->AddOrdersMenusInfoTextBox);
+			this->AddOrderTab->Controls->Add(this->AddOrdersMenusQuantityTextBox);
+			this->AddOrderTab->Controls->Add(this->AddOrdersSelectMenusComboBox);
+			this->AddOrderTab->Controls->Add(this->AddOrdersTableInfoTextBox);
+			this->AddOrderTab->Controls->Add(this->AddOrdersSelectTableComboBox);
+			this->AddOrderTab->Controls->Add(this->AddOrdersInTableTextBox);
 			this->AddOrderTab->Location = System::Drawing::Point(4, 37);
 			this->AddOrderTab->Name = L"AddOrderTab";
 			this->AddOrderTab->Padding = System::Windows::Forms::Padding(3);
@@ -360,6 +549,104 @@ namespace RealProjectV1 {
 			this->AddOrderTab->TabIndex = 0;
 			this->AddOrderTab->Text = L"Add Order";
 			this->AddOrderTab->UseVisualStyleBackColor = true;
+			// 
+			// AddOrdersButton
+			// 
+			this->AddOrdersButton->Enabled = false;
+			this->AddOrdersButton->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddOrdersButton->Location = System::Drawing::Point(298, 482);
+			this->AddOrdersButton->Name = L"AddOrdersButton";
+			this->AddOrdersButton->Size = System::Drawing::Size(221, 100);
+			this->AddOrdersButton->TabIndex = 6;
+			this->AddOrdersButton->Text = L"Add Order";
+			this->AddOrdersButton->UseVisualStyleBackColor = true;
+			this->AddOrdersButton->Click += gcnew System::EventHandler(this, &MainPage::AddOrdersButton_Click);
+			// 
+			// AddOrdersMenusInfoTextBox
+			// 
+			this->AddOrdersMenusInfoTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AddOrdersMenusInfoTextBox->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->AddOrdersMenusInfoTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddOrdersMenusInfoTextBox->Location = System::Drawing::Point(3, 367);
+			this->AddOrdersMenusInfoTextBox->Multiline = true;
+			this->AddOrdersMenusInfoTextBox->Name = L"AddOrdersMenusInfoTextBox";
+			this->AddOrdersMenusInfoTextBox->ReadOnly = true;
+			this->AddOrdersMenusInfoTextBox->Size = System::Drawing::Size(830, 109);
+			this->AddOrdersMenusInfoTextBox->TabIndex = 5;
+			this->AddOrdersMenusInfoTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// AddOrdersMenusQuantityTextBox
+			// 
+			this->AddOrdersMenusQuantityTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AddOrdersMenusQuantityTextBox->Enabled = false;
+			this->AddOrdersMenusQuantityTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddOrdersMenusQuantityTextBox->Location = System::Drawing::Point(710, 308);
+			this->AddOrdersMenusQuantityTextBox->Name = L"AddOrdersMenusQuantityTextBox";
+			this->AddOrdersMenusQuantityTextBox->Size = System::Drawing::Size(123, 51);
+			this->AddOrdersMenusQuantityTextBox->TabIndex = 4;
+			this->AddOrdersMenusQuantityTextBox->Text = L"1";
+			this->AddOrdersMenusQuantityTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// AddOrdersSelectMenusComboBox
+			// 
+			this->AddOrdersSelectMenusComboBox->Enabled = false;
+			this->AddOrdersSelectMenusComboBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddOrdersSelectMenusComboBox->FormattingEnabled = true;
+			this->AddOrdersSelectMenusComboBox->Location = System::Drawing::Point(3, 308);
+			this->AddOrdersSelectMenusComboBox->Name = L"AddOrdersSelectMenusComboBox";
+			this->AddOrdersSelectMenusComboBox->Size = System::Drawing::Size(701, 53);
+			this->AddOrdersSelectMenusComboBox->TabIndex = 3;
+			this->AddOrdersSelectMenusComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MainPage::AddOrdersSelectMenusComboBox_SelectedIndexChanged);
+			// 
+			// AddOrdersTableInfoTextBox
+			// 
+			this->AddOrdersTableInfoTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AddOrdersTableInfoTextBox->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->AddOrdersTableInfoTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddOrdersTableInfoTextBox->Location = System::Drawing::Point(3, 62);
+			this->AddOrdersTableInfoTextBox->Multiline = true;
+			this->AddOrdersTableInfoTextBox->Name = L"AddOrdersTableInfoTextBox";
+			this->AddOrdersTableInfoTextBox->ReadOnly = true;
+			this->AddOrdersTableInfoTextBox->Size = System::Drawing::Size(830, 240);
+			this->AddOrdersTableInfoTextBox->TabIndex = 2;
+			this->AddOrdersTableInfoTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+			// 
+			// AddOrdersSelectTableComboBox
+			// 
+			this->AddOrdersSelectTableComboBox->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Suggest;
+			this->AddOrdersSelectTableComboBox->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::ListItems;
+			this->AddOrdersSelectTableComboBox->Dock = System::Windows::Forms::DockStyle::Left;
+			this->AddOrdersSelectTableComboBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->AddOrdersSelectTableComboBox->FormattingEnabled = true;
+			this->AddOrdersSelectTableComboBox->Location = System::Drawing::Point(3, 3);
+			this->AddOrdersSelectTableComboBox->Name = L"AddOrdersSelectTableComboBox";
+			this->AddOrdersSelectTableComboBox->Size = System::Drawing::Size(830, 53);
+			this->AddOrdersSelectTableComboBox->TabIndex = 1;
+			this->AddOrdersSelectTableComboBox->SelectedIndexChanged += gcnew System::EventHandler(this, &MainPage::AddOrdersSelectTableComboBox_SelectedIndexChanged);
+			// 
+			// AddOrdersInTableTextBox
+			// 
+			this->AddOrdersInTableTextBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
+				| System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->AddOrdersInTableTextBox->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->AddOrdersInTableTextBox->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->AddOrdersInTableTextBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->AddOrdersInTableTextBox->Location = System::Drawing::Point(852, 6);
+			this->AddOrdersInTableTextBox->Multiline = true;
+			this->AddOrdersInTableTextBox->Name = L"AddOrdersInTableTextBox";
+			this->AddOrdersInTableTextBox->ReadOnly = true;
+			this->AddOrdersInTableTextBox->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->AddOrdersInTableTextBox->Size = System::Drawing::Size(400, 620);
+			this->AddOrdersInTableTextBox->TabIndex = 0;
+			this->AddOrdersInTableTextBox->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 			// 
 			// RemoveOrderTab
 			// 
@@ -373,10 +660,10 @@ namespace RealProjectV1 {
 			// 
 			// EditMenuTab
 			// 
-			this->EditMenuTab->Location = System::Drawing::Point(4, 37);
+			this->EditMenuTab->Location = System::Drawing::Point(4, 25);
 			this->EditMenuTab->Name = L"EditMenuTab";
 			this->EditMenuTab->Padding = System::Windows::Forms::Padding(3);
-			this->EditMenuTab->Size = System::Drawing::Size(1258, 632);
+			this->EditMenuTab->Size = System::Drawing::Size(1258, 644);
 			this->EditMenuTab->TabIndex = 2;
 			this->EditMenuTab->Text = L"Edit Menu";
 			this->EditMenuTab->UseVisualStyleBackColor = true;
@@ -390,33 +677,15 @@ namespace RealProjectV1 {
 			this->BillingMenuTab->Text = L"Billing Menu";
 			this->BillingMenuTab->UseVisualStyleBackColor = true;
 			// 
-			// AddTableGroupBox
+			// ReservetionNameGroupBox
 			// 
-			this->AddTableGroupBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->AddTableGroupBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->AddTableGroupBox->Location = System::Drawing::Point(6, 6);
-			this->AddTableGroupBox->Name = L"AddTableGroupBox";
-			this->AddTableGroupBox->Size = System::Drawing::Size(1246, 307);
-			this->AddTableGroupBox->TabIndex = 0;
-			this->AddTableGroupBox->TabStop = false;
-			this->AddTableGroupBox->Text = L"Add Table";
-			// 
-			// RemoveTableGroupBox
-			// 
-			this->RemoveTableGroupBox->Anchor = static_cast<System::Windows::Forms::AnchorStyles>((((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Bottom)
-				| System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->RemoveTableGroupBox->Font = (gcnew System::Drawing::Font(L"Segoe UI", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->RemoveTableGroupBox->Location = System::Drawing::Point(6, 319);
-			this->RemoveTableGroupBox->Name = L"RemoveTableGroupBox";
-			this->RemoveTableGroupBox->Size = System::Drawing::Size(1246, 307);
-			this->RemoveTableGroupBox->TabIndex = 1;
-			this->RemoveTableGroupBox->TabStop = false;
-			this->RemoveTableGroupBox->Text = L"Remove Table";
+			this->ReservetionNameGroupBox->Controls->Add(this->ResNameTextBox);
+			this->ReservetionNameGroupBox->Location = System::Drawing::Point(3, 308);
+			this->ReservetionNameGroupBox->Name = L"ReservetionNameGroupBox";
+			this->ReservetionNameGroupBox->Size = System::Drawing::Size(830, 95);
+			this->ReservetionNameGroupBox->TabIndex = 5;
+			this->ReservetionNameGroupBox->TabStop = false;
+			this->ReservetionNameGroupBox->Text = L"Reservetion Name";
 			// 
 			// MainPage
 			// 
@@ -442,8 +711,22 @@ namespace RealProjectV1 {
 			this->CancelTableTab->ResumeLayout(false);
 			this->CancelTableTab->PerformLayout();
 			this->EditTableTab->ResumeLayout(false);
+			this->EditTableContainer->Panel1->ResumeLayout(false);
+			this->EditTableContainer->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->EditTableContainer))->EndInit();
+			this->EditTableContainer->ResumeLayout(false);
+			this->AddTableGroupBox->ResumeLayout(false);
+			this->AddTableMaxSeatGroupBox->ResumeLayout(false);
+			this->AddTableMaxSeatGroupBox->PerformLayout();
+			this->AddTableNameGroupBox->ResumeLayout(false);
+			this->AddTableNameGroupBox->PerformLayout();
+			this->RemoveTableGroupBox->ResumeLayout(false);
 			this->OrderMenuTab->ResumeLayout(false);
 			this->OrderMenuTabControl->ResumeLayout(false);
+			this->AddOrderTab->ResumeLayout(false);
+			this->AddOrderTab->PerformLayout();
+			this->ReservetionNameGroupBox->ResumeLayout(false);
+			this->ReservetionNameGroupBox->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -468,6 +751,10 @@ namespace RealProjectV1 {
 		public: order(String^ name, int quantity) {
 			this->name = name;
 			this->quantity = quantity;
+		}
+		public: order(const order^& order) {
+			this->name = order->name;
+			this->quantity = order->quantity;
 		}
 		public: String^ getName() {
 			return this->name;
@@ -526,18 +813,21 @@ namespace RealProjectV1 {
 		public: array<order^>^ getOrders() {
 			return this->orders;
 		}
+		public: void setOrders(array<order^>^ orderss) {
+			this->orders = orderss;
+		}
 		public: void setIsAvailable(bool isAvailable) {
 			this->isAvailable = isAvailable;
 		}
-		public: void addOrder(order orderss) {
+		public: void addOrder(order^ orderss) {
 			for (int i = 0; i < this->orders->Length; i++) {
-				if (this->orders[i]->getName() == orderss.getName()) {
-					this->orders[i]->add(orderss.getQuantity());
+				if (this->orders[i]->getName() == orderss->getName()) {
+					this->orders[i]->add(orderss->getQuantity());
 					return;
 				}
 			}
 			Array::Resize(this->orders, this->orders->Length + 1);
-			this->orders[this->orders->Length - 1] = gcnew order(orderss.getName(), orderss.getQuantity());
+			this->orders[this->orders->Length - 1] = gcnew order(orderss->getName(), orderss->getQuantity());
 		}
 		public: void removeOrder(order orderss) {
 			for (int i = 0; i < this->orders->Length; i++) {
@@ -567,7 +857,7 @@ namespace RealProjectV1 {
 				}
 			}
 		}
-		public: void removeOrder() {
+		public: void removeAllOrder() {
 			Array::Clear(this->orders, 0, this->orders->Length);
 		}
 		public: int total() {
@@ -603,6 +893,8 @@ namespace RealProjectV1 {
 		CancelTableStatusTextBox->Text = "";
 		SelectTableComboBox->Items->Clear();
 		CancelTableComboBox->Items->Clear();
+		RemoveTableComboBox->Items->Clear();
+		AddOrdersSelectTableComboBox->Items->Clear();
 		for (int i = 0; i < tables->Length; i++) {
 			TableStatusTextBox->Text += tables[i]->getName() + " is " + (tables[i]->getIsAvailable() ? "available" : "not available") + "\r\n";
 			CancelTableStatusTextBox->Text += tables[i]->getName() + " is " + (tables[i]->getIsAvailable() ? "available" : "not available") + "\r\n";
@@ -611,7 +903,12 @@ namespace RealProjectV1 {
 			}
 			else {
 				CancelTableComboBox->Items->Add(tables[i]->getName());
+				AddOrdersSelectTableComboBox->Items->Add(tables[i]->getName());
 			}
+			RemoveTableComboBox->Items->Add(tables[i]->getName());
+		}
+		for (int i = 0; i < menus->Length; i++) {
+			AddOrdersSelectMenusComboBox->Items->Add(menus[i]->getName());
 		}
 	}
 	private: System::Void MainPage_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -722,6 +1019,109 @@ namespace RealProjectV1 {
 			}
 		}
 		reloadElement();
+	}
+	private: System::Void AddTableNameTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (AddTableNameTextBox->Text == "" || AddTableMaxSeatTextBox->Text == "") {
+			AddTableButton->Enabled = false;
+		}
+		else {
+			AddTableButton->Enabled = true;
+		}
+	}
+	private: System::Void AddTableMaxSeatTextBox_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (AddTableNameTextBox->Text == "" || AddTableMaxSeatTextBox->Text == "") {
+			AddTableButton->Enabled = false;
+		}
+		else {
+			AddTableButton->Enabled = true;
+		}
+	}
+	private: System::Void AddTableButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		Array::Resize(tables, tables->Length + 1);
+		tables[tables->Length - 1] = gcnew table(AddTableNameTextBox->Text, Convert::ToInt32(AddTableMaxSeatTextBox->Text), true, "-");
+		AddTableNameTextBox->Text = "";
+		AddTableMaxSeatTextBox->Text = "";
+		reloadElement();
+		MessageBox::Show("Table " + tables[tables->Length - 1]->getName() + " has been added", "Add Table", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	private: System::Void RemoveTableButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		for (int i = 0; i < tables->Length; i++) {
+			if (tables[i]->getName() == RemoveTableComboBox->Text) {
+				for (int j = i; j < tables->Length - 1; j++) {
+					tables[j] = tables[j + 1];
+				}
+				Array::Resize(tables, tables->Length - 1);
+			}
+		}
+		reloadElement();
+		RemoveTableComboBox->Text = "";
+		RemoveTableButton->Enabled = false;
+		MessageBox::Show("Table " + RemoveTableComboBox->Text + " has been removed", "Remove Table", MessageBoxButtons::OK, MessageBoxIcon::Information);
+	}
+	private: System::Void RemoveTableComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (RemoveTableComboBox->Text == "") {
+			RemoveTableButton->Enabled = false;
+		}
+		else {
+			RemoveTableButton->Enabled = true;
+		}
+	}
+	private: System::Void AddOrdersSelectTableComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (AddOrdersSelectTableComboBox->Text == "" || AddOrdersSelectMenusComboBox->Text == "" || AddOrdersMenusQuantityTextBox->Text == "") {
+			AddOrdersButton->Enabled = false;
+		}
+		else {
+			AddOrdersButton->Enabled = true;
+		}
+		if (AddOrdersSelectTableComboBox->Text == "") {
+			AddOrdersSelectMenusComboBox->Enabled = false;
+			AddOrdersMenusQuantityTextBox->Enabled = false;
+		}
+		else {
+			AddOrdersSelectMenusComboBox->Enabled = true;
+			AddOrdersMenusQuantityTextBox->Enabled = true;
+		}
+		AddOrdersTableInfoTextBox->Text = "";
+		for (int i = 0; i < tables->Length; i++) {
+			if (tables[i]->getName() == AddOrdersSelectTableComboBox->Text) {
+				AddOrdersTableInfoTextBox->Text = "Table Name: " + tables[i]->getName() + "\r\n";
+				AddOrdersTableInfoTextBox->Text += "Max Seat: " + tables[i]->getMaxSeat() + "\r\n";
+				AddOrdersTableInfoTextBox->Text += "Status: " + (tables[i]->getIsAvailable() ? "Available" : "Not Available") + "\r\n";
+				AddOrdersTableInfoTextBox->Text += "Reserved Name: " + tables[i]->getResName() + "\r\n";
+			}
+		}
+	}
+	private: System::Void AddOrdersSelectMenusComboBox_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (AddOrdersSelectTableComboBox->Text == "" || AddOrdersSelectMenusComboBox->Text == "" || AddOrdersMenusQuantityTextBox->Text == "") {
+			AddOrdersButton->Enabled = false;
+		}
+		else {
+			AddOrdersButton->Enabled = true;
+		}
+		AddOrdersMenusInfoTextBox->Text = "";
+		for (int i = 0; i < menus->Length; i++) {
+			if (menus[i]->getName() == AddOrdersSelectMenusComboBox->Text) {
+				AddOrdersMenusInfoTextBox->Text = "Menu Name: " + menus[i]->getName() + "\r\n";
+				AddOrdersMenusInfoTextBox->Text += "Price: " + menus[i]->getPrice() + "\r\n";
+			}
+		}
+	}
+	private: System::Void AddOrdersButton_Click(System::Object^ sender, System::EventArgs^ e) {
+		String^ MenuName = AddOrdersSelectMenusComboBox->Text;
+		int Price = Convert::ToInt32(AddOrdersMenusQuantityTextBox->Text);
+		order^ tempOrder = gcnew order(MenuName, Price);
+		int tableIndex = 0;
+		for (int i = 0; i < tables->Length; i++) {
+			if (tables[i]->getName() == AddOrdersSelectTableComboBox->Text) {
+				tables[i]->addOrder(tempOrder);
+				tableIndex = i;
+			}
+		}
+		array<order^>^ tempOrders = tables[tableIndex]->getOrders();
+		AddOrdersInTableTextBox->Text = "Table: " + tables[tableIndex]->getName() + "\r\n";
+		for (int i = 0; i < tempOrders->Length; i++) {
+			AddOrdersInTableTextBox->Text += (i+1) + ". " + tempOrders[i]->getName() + " x" + tempOrders[i]->getQuantity() + "\r\n";
+		}
 	}
 };
 }
